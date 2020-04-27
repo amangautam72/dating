@@ -14,9 +14,12 @@ import ProfileItem from '../components/ProfileItem';
 import Icon from '../components/Icon';
 import Demo from '../assets/data/demo.js';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 const SCREEN_HEIGHT = Dimensions.get('window').height
 
-const Login = () => {
+const Login = ({ navigation}) => {
     const {
         age,
         image,
@@ -74,8 +77,8 @@ const Login = () => {
                     </View>
 
 
-                    <TouchableOpacity style={{backgroundColor:'#7444C0',flex:1,padding:10,marginTop:20, borderRadius:5}}>
-                        <Text style={{color:'#fff', textAlign:'center'}}>SUBMIT</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("BottomTabs")} style={{backgroundColor:'#7444C0',flex:1,padding:10,marginTop:20, borderRadius:5}}>
+                        <Text  style={{color:'#fff', textAlign:'center'}}>SUBMIT</Text>
                     </TouchableOpacity>
 
 

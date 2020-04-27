@@ -20,7 +20,7 @@ const Matches = () => {
       style={styles.bg}
     >
       <View style={styles.containerMatches}>
-        <ScrollView>
+        {/* <ScrollView> */}
           <View style={styles.top}>
             <Text style={styles.title}>Matches</Text>
             <TouchableOpacity>
@@ -45,7 +45,7 @@ const Matches = () => {
               </TouchableOpacity>
             )}
           />
-        </ScrollView>
+        {/* </ScrollView> */}
       </View>
     </ImageBackground>
   );

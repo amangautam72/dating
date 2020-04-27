@@ -26,10 +26,28 @@ import {
 
 
 import LoginScreen from './containers/Login'
+import HomeScreen from './containers/Home'
+import MessageScreen from './containers/Messages'
+import MatchesScreen from './containers/Matches'
+import ProfileScreen from './containers/Profile'
 
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Messages" component={MessageScreen} />
+      <Tab.Screen name="Matches" component={MatchesScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+}
 
 
 const Stack = createStackNavigator();
@@ -39,6 +57,7 @@ function MyStack() {
     <Stack.Navigator 
     headerMode={"none"}>
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="BottomTabs" component={MyTabs} />
     </Stack.Navigator>
   );
 }
