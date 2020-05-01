@@ -25,7 +25,11 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 
+import { Root } from "native-base";
+
+
 import LoginScreen from './containers/Login'
+import OtpScreen from './containers/Otp'
 import HomeScreen from './containers/Home'
 import MessageScreen from './containers/Messages'
 import MatchesScreen from './containers/Matches'
@@ -54,9 +58,10 @@ const Stack = createStackNavigator();
 
 function MyStack() {
   return (
-    <Stack.Navigator 
-    headerMode={"none"}>
+    <Stack.Navigator
+      headerMode={"none"}>
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Otp" component={OtpScreen} />
       <Stack.Screen name="BottomTabs" component={MyTabs} />
     </Stack.Navigator>
   );
@@ -64,10 +69,14 @@ function MyStack() {
 
 export function App() {
   return (
-    
-    <NavigationContainer>
-      <MyStack/>
-    </NavigationContainer>
+
+    <Root>
+
+      <NavigationContainer>
+        <MyStack />
+      </NavigationContainer>
+
+    </Root>
   );
 };
 

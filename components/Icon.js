@@ -21,7 +21,6 @@ const Icon = ({ name }) => {
   let icon = iconsList[name];
   icon = icon.substr(3);
   icon = String.fromCharCode(parseInt(icon, 16));
-
   return icon;
 };
 
