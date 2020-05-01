@@ -29,6 +29,7 @@ import { Root } from "native-base";
 
 
 import LoginScreen from './containers/Login'
+import BasicInfoScreen from './containers/BasicInfo'
 import OtpScreen from './containers/Otp'
 import HomeScreen from './containers/Home'
 import MessageScreen from './containers/Messages'
@@ -60,6 +61,7 @@ function MyStack() {
   return (
     <Stack.Navigator
       headerMode={"none"}>
+      <Stack.Screen name="BasicInfo" component={BasicInfoScreen} />  
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Otp" component={OtpScreen} />
       <Stack.Screen name="BottomTabs" component={MyTabs} />
