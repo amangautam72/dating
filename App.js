@@ -61,9 +61,10 @@ function MyStack() {
   return (
     <Stack.Navigator
       headerMode={"none"}>
-      <Stack.Screen name="BasicInfo" component={BasicInfoScreen} />  
+      
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Otp" component={OtpScreen} />
+      <Stack.Screen name="BasicInfo" component={BasicInfoScreen} />  
       <Stack.Screen name="BottomTabs" component={MyTabs} />
     </Stack.Navigator>
   );

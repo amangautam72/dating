@@ -7,17 +7,16 @@ import {
     Text,
     ImageBackground,
     TouchableOpacity,
-    TextInput,Platform,
+    TextInput,
     Dimensions, KeyboardAvoidingView
 } from 'react-native';
-import ProfileItem from '../components/ProfileItem';
+
 //import Icon from '../components/Icon';
-import Demo from '../assets/data/demo.js';
 
 import { Icon, Toast } from 'native-base'
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import AsyncStorage from '@react-native-community/async-storage';
+
 import { sendOtp } from '../services/requests';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height
@@ -26,6 +25,11 @@ const Login = ({ navigation}) => {
 
   
     const [mobile, setMobile] = useState('')
+
+
+    useEffect(() => {
+        checkAppSession()
+    });
 
     const onLoginClick = () => {
 
@@ -46,6 +50,18 @@ const Login = ({ navigation}) => {
        }).catch((err) => console.log(err))
     
     }
+
+
+    const checkAppSession = async() => {
+        try {
+            const token = await AsyncStorage.getItem('auth')
+            if(token !== null) {
+              navigation.navigate("BottomTabs")
+            }
+          } catch(e) {
+            // error reading value
+          }
+    };
 
     return (
         // <View

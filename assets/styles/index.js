@@ -340,5 +340,9 @@ export default StyleSheet.create({
 		fontFamily: ICON_FONT,
 		height: 20,
 		paddingBottom: 7
-	}
+	},
+
+	male: {backgroundColor: '#fff', padding: 10, paddingLeft: 25, borderBottomLeftRadius: 20, borderTopLeftRadius: 20, borderWidth: 1, borderColor: '#ddd'},
+    female: {backgroundColor: '#fff', padding: 10, paddingRight: 20, borderBottomRightRadius: 20, borderTopRightRadius: 20, borderWidth: 1, borderColor: '#ddd'}
+
 });

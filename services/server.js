@@ -5,7 +5,7 @@ export const SERVER_ADDRESS = "http://35.247.179.117:3000/api"
 export default {
     LOGIN: SERVER_ADDRESS+'/login',
     VERIFY: SERVER_ADDRESS+'/confirm',
-    CATEGORY: SERVER_ADDRESS+'/category',
+    UPDATE_USER: SERVER_ADDRESS+'/user/update',
     CREATE_REQUEST: SERVER_ADDRESS+'/createpost',
     UPDATEPOST: SERVER_ADDRESS+'/updatepost',
     DELETEPOST: SERVER_ADDRESS+'/deletepost',
