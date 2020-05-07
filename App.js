@@ -25,11 +25,12 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 
-import { Root } from "native-base";
+import { Root, Icon } from "native-base";
 
 
 import LoginScreen from './containers/Login'
 import BasicInfoScreen from './containers/BasicInfo'
+import UploadImageScreen from './containers/UploadImage'
 import OtpScreen from './containers/Otp'
 import HomeScreen from './containers/Home'
 import MessageScreen from './containers/Messages'
@@ -45,10 +46,35 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Messages" component={MessageScreen} />
+    <Tab.Navigator
+    initialRouteName={"Profile"}
+    screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+        let iconFocused = focused ? "#7444C0" : "#363636";  ; 
+
+        if (route.name === 'Explore') {
+          iconName = 'md-search'
+         
+        } else if (route.name === 'Messages') {
+          iconName = 'ios-text'
+        } else if (route.name === 'Matches') {
+          iconName = 'md-heart'
+        } else if (route.name === 'Profile') {
+          iconName = 'md-contact'
+        } 
+
+        // You can return any component that you like here!
+        return <Icon name={iconName} size={size} style={{color:iconFocused, fontSize: 20}} />;
+      },
+    })}
+    tabBarOptions={{
+      activeTintColor: '#7444C0',
+      //inactiveTintColor: 'gray',
+    }}>
+      <Tab.Screen name="Explore" component={HomeScreen} />
       <Tab.Screen name="Matches" component={MatchesScreen} />
+      <Tab.Screen name="Messages" component={MessageScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
@@ -61,7 +87,7 @@ function MyStack() {
   return (
     <Stack.Navigator
       headerMode={"none"}>
-      
+      {/* <Stack.Screen name="UploadImage" component={UploadImageScreen} /> */}
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Otp" component={OtpScreen} />
       <Stack.Screen name="BasicInfo" component={BasicInfoScreen} />  

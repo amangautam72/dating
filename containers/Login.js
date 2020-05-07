@@ -28,7 +28,7 @@ const Login = ({ navigation}) => {
 
 
     useEffect(() => {
-        checkAppSession()
+        //checkAppSession()
     });
 
     const onLoginClick = () => {
