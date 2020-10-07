@@ -88,6 +88,7 @@ function MyStack() {
     <Stack.Navigator
       headerMode={"none"}>
       {/* <Stack.Screen name="UploadImage" component={UploadImageScreen} /> */}
+      
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Otp" component={OtpScreen} />
       <Stack.Screen name="BasicInfo" component={BasicInfoScreen} />  
